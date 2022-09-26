@@ -95,14 +95,14 @@ int main(int argc, char *argv[]) {
     }
     int nrecord = total / resol;
 
-    struct timespec *logbuf = malloc(nrecord * sizeof(struct timespec));
+   struct timespec *logbuf = malloc(nrecord * sizeof(struct timespec));
     if (!logbuf)
         err(EXIT_FAILURE, "malloc(logbuf) failed");
 
     puts("estimating workload which takes just one milisecond");
     unsigned long nloop_per_resol = loops_per_msec() * resol;
     puts("end estimation");
-    fflush(stdout)
+    fflush(stdout);
     pids = malloc(nproc * sizeof(pid_t));
     if (pids == NULL) {
         warn("malloc(pids) failed");
